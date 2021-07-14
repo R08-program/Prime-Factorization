@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>素因数分解</title>
+        <script type="text/javascript">
+        function Calc();
+        </script>
+        <noscript>JavaScriptが利用できません．</noscript>
+    </head>
+    <body>
+        <h1>素因数分解</h1>
+        <p>素因数分解したい数字を入力してください．</p>
+        <input type="number" id="num">
+        <input type="button" value="Go" onclick="Calc()"><br>
+        <script type="text/javascript">
+            function Calc(){
+                let n = document.getElementById("num").value;
+                let i = 2, j = 0;
+                let ans = "";
+                while(n!=1){
+                    while(n%i==0){
+                        n/=i;
+                        j++;
+                    }
+                    if(j!=0){
+                        ans += i + "=>" + j + "\n";
+                    }
+                    j=0;
+                    i++;
+                }
+                window.alert(ans);
+            }
+        </script>
+    </body>
+</html>
